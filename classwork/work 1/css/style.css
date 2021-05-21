@@ -10,7 +10,7 @@
 .hero {
     padding-top: 538px;
     padding-bottom: 133px;
-    background-image: url("hero-back.jpg");
+    background-image: url("../hero-back.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -38,9 +38,6 @@
     background-color: rgba(0,0,0,0.32);
     border: 1px solid white;
 }
-.yellow-text {
-    color: #F48E0B;
-}
 .navigation {
     display: flex;
     padding-bottom: 22px;
@@ -67,27 +64,122 @@
     text-transform: uppercase;
 }
 .portfolio {
+    padding: 27px 0 124px;
    display: flex;
     justify-content: space-between;
 }
 .portfolio-pictures {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     width: calc(50% - 15px);
+
 }
 .portfolio-item {
+    margin-bottom: 30px;
+    height: 148px;
+    width: calc(50% - 15px);
 
 }
 .portfolio-about {
     width: calc(50% - 15px);
+    line-height: 1;
 }
 .portfolio-title {
+    font-size: 18px;
+    margin-bottom: 22px;
+    text-transform: uppercase;
 
 }
 .portfolio-article-text {
-
+    font-size: 14px;
+    line-height: 22px;
 }
 .portfolio-link {
+    display: inline-block;
+    padding: 19px 27px;
+    font-size: 14px;
+    color: white;
+    line-height: 1;
+    text-decoration: none;
+    background-color: #F1AD1D;
 
+}
+.pbi1 {
+ background-image: url("../img/Layer 23.jpg");
+}
+.pbi2 {
+    background-image: url("../img/Layer 24.jpg");
+}
+.pbi3 {
+    background-image: url("../img/Layer 25.jpg");
+}
+.pbi4 {
+    background-image: url("../img/Layer 26.jpg");
 }
 
 
 
+
+
+.blog {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 850px;
+}
+.blog-card {
+    width: calc((100% / 3) - 20px);
+    border-bottom: 3px solid #333333;
+    margin-bottom: 30px;
+
+}
+.blog-card-img {
+    width: 100%;
+}
+.blog-card-title {
+    display: flex;
+    align-items: center;
+
+
+}
+.blog-card-icon {
+    padding: 12px;
+    background-color: #333333;
+    margin-right: 8px;
+
+}
+.blog-card-text {
+    margin: 15px 0;
+    font-size: 14px;
+    line-height: 17px;
+    color: #505050;
+
+}
+.blog-card-info {
+    padding-top: 11px;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #C1C1C1;
+
+}
+.blog-card-info p {
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 18px;
+    color: #828282;
+}
+
+
+
+
+
+
+
+
+
+.yellow-text {
+    color: #F48E0B;
+}
