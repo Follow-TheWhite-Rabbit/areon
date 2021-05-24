@@ -52,10 +52,9 @@
 .list {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 54px;
 }
-.items {
-    margin-bottom: 484px;
-}
+
 .items-list {
     width: 342px;
     height: 397px;
@@ -151,3 +150,4 @@
 .blue-text {
 color: #4BCAFF;
 }
+
