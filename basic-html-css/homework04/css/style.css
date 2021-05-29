@@ -6,7 +6,6 @@
 .hero {
     background-image: url("../img/header-bg.jpeg");
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
 }
 .navbar {
