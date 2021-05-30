@@ -11,9 +11,6 @@
 .navbar {
     display: flex;
     justify-content: space-between;
-    width: 1900px;
-    height: 70px;
-    margin: 0 auto;
     background: #313131;
 }
 .logo {
