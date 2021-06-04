@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<form class="sign-in" action="">
+    <!--(label.sign-in-label>input.sign-in-field)*2-->
+    <label class="sign-in-label">
+        Username
+        <input type="text" required class="sign-in-field" placeholder="Enter username">
+    </label>
+
+    <label class="sign-in-label">
+        Password
+        <input type="password" class="sign-in-field" placeholder="Enter password">
+    </label>
+
+    <label class="sign-in-label">
+        Message
+        <textarea class="sign-in-field" placeholder="Enter message"></textarea>
+    </label>
+
+    <div class="sign-in-radio-wrap">
+        <label class="sign-in-radio">
+            <input class="sign-in-radio-input" name="sex" type="radio">
+            <span class="sign-in-checkmark"></span>
+            Male
+        </label>
+
+        <label class="sign-in-radio">
+            <input class="sign-in-radio-input" name="sex" type="radio">
+            <span class="sign-in-checkmark"></span>
+            Female
+        </label>
+    </div>
+
+    <input class="sign-in-btn" type="submit" value="Log in">
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+*{
+    font-family: sans-serif;
+}
+.sign-in {
+    padding: 32px;
+    width: 545px;
+    background-color: #fff;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.sign-in-label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+    font-size: 15px;
+    line-height: 18px;
+    color: #000000;
+}
+.sign-in-field {
+    margin-top: 12px;
+    padding: 14px 20px;
+    border: 1px solid #C1C1C1;
+    box-sizing: border-box;
+    border-radius: 4px;
+    resize: none;
+    outline: none;
+}
+.sign-in-field:focus {
+    box-shadow: 0 0 0 25px rgba(0,0,0, 0.1);
+}
+.sign-in-field::placeholder {
+    color: #c2c2c2;
+    font-size: 52px;
+    font-weight: 700;
+}
+
+
+.sign-in-radio-wrap {
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 5px;
+}
+
+
+.sign-in-checkmark {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #f0f;
+}
+
+.sign-in-radio-input {
+    display: none;
+}
+
+.sign-in-radio-input:checked ~ .sign-in-checkmark {
+    background-color: #0f0;
+}
+
+
+
+.sign-in-btn {
+    background: #556EE6;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    color: #FFFFFF;
+    border: none;
+    padding: 14px 20px;
+}
