@@ -96,8 +96,9 @@
 .gallery-card-content {
     position: absolute;
     top: 100%;
+    transform: scale(0);
     background: white;
-    transition: top 0.3s;
+    transition: top 0.3s, transform 0.3s;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
@@ -119,7 +120,7 @@
 }
 .gallery-card-title::after {
     content: "";
-    width: 64px;
+    width: 30px;
     height: 3px;
     background: #F1AD1D;
     margin-top: 25px;
@@ -131,8 +132,9 @@
 
 }
 
-.gallery-card:hover > .gallery-card-content {
+.gallery-card:hover .gallery-card-content {
     top: 0;
+    transform: scale(1);
 }
 
 

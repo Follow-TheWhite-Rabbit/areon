@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.milan-holidays {
+    background-image: url("../img/background 1.jpg");
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+.conteiner {
+    width: 1023px;
+    margin: 0 auto;
+}
+.hero {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 46px;
+    padding-bottom: 17px;
+}
+.logo {
+    display: flex;
+    text-decoration: none;
+}
+.logo:hover .logo-img {
+    content: url("../img/logo-orange.svg");
+}
+.logo:hover .logo-text {
+    color: #F26522;
+}
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 29px;
+    line-height: 29px;
+    padding-left: 8px;
+
+}
+.logo-text2 {
+    font-size: 18px;
+    line-height: 18px;
+
+}
+.contacts {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+.contacts-mail {
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 18px;
+    text-decoration: none;
+}
+.contacts-tel {
+    text-align: end;
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 18px;
+    text-decoration: none;
+}
+.contacts-mail:hover {
+    color: #F26522;
+}
+.contacts-tel:hover {
+    color: #F26522;
+}
+
+
+
+
+
+
+.tours {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 60px;
+    row-gap: 37px;
+    margin-bottom: 50px;
+}
+.main-link {
+    text-decoration: none;
+}
+.main-link-section {
+    width: 300px;
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+}
+.main-link-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.main-link-text {
+    position: absolute;
+    top: 100%;
+    background: #F26522;
+    transition: top 0.4s;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 14px 12px 16px;
+    box-sizing: border-box;
+
+}
+.main-link-text-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.main-link-title {
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 18px;
+    margin-top: 20px;
+    text-align: center;
+
+}
+.main-link-title:hover {
+    color: #F26522;
+}
+.text1 {
+    color: #FFFFFF;
+    font-size: 10px;
+    line-height: 10px;
+}
+.text2 {
+
+    color: #FFFFFF;
+    font-size: 20px;
+    line-height: 20px;
+}
+.text3 {
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 14px;
+    padding-top: 29px;
+}
+.text3::after {
+    content: url("../img/Vector 1.svg");
+    margin-left: 16px;
+}
+.main-link-section:hover .main-link-text {
+    top: 70%;
+}
+.copyright {
+}
+.copyright-text {
+    font-size: 12px;
+    line-height: 12px;
+    color: #FFFFFF;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+
+
+
+
+
+
