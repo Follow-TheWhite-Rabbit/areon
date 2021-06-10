@@ -1,6 +1,4 @@
 *{
-    margin: 0;
-    padding: 0;
     font-family: sans-serif;
 }
 .milan-holidays {
@@ -42,6 +40,7 @@
 .logo-text2 {
     font-size: 18px;
     line-height: 18px;
+    padding-top: 5px;
 
 }
 .contacts {
@@ -122,9 +121,6 @@
     text-align: center;
 
 }
-.main-link-title:hover {
-    color: #F26522;
-}
 .text1 {
     color: #FFFFFF;
     font-size: 10px;
@@ -146,10 +142,11 @@
     content: url("../img/Vector 1.svg");
     margin-left: 16px;
 }
-.main-link-section:hover .main-link-text {
+.main-link:hover .main-link-text {
     top: 70%;
 }
-.copyright {
+.main-link:hover .main-link-title {
+    color: #F26522;
 }
 .copyright-text {
     font-size: 12px;
