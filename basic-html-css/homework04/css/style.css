@@ -43,6 +43,9 @@
     display: flex;
     justify-content: space-between;
 }
+.nav-menu-item:hover .nav-menu-link {
+    color: #14B9D5;
+}
 .nav-menu-link {
     color: #FFFFFF;
     font-size: 15px;
