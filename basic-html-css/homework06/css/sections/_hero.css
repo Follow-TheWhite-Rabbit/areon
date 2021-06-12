@@ -1,0 +1,68 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0 78px 0 78px;
+}
+.logo {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 22px;
+    text-decoration: none;
+    padding: 18px 0 18px 0;
+}
+.logo:hover {
+    color: #01813F;
+}
+.icons-and-join {
+    display: flex;
+}
+.header-icons {
+    display: flex;
+}
+.calendar {
+    width: 21px;
+    height: 24px;
+    padding: 17px 0 17px 0;
+}
+
+.envelope {
+    width: 23px;
+    height: 23px;
+    padding: 17px 24px 18px 27px;
+}
+
+.compass {
+    width: 24px;
+    height: 24px;
+    padding: 17px 0 17px 0;
+}
+.calendar:hover path {
+    fill: #01813F;
+}
+.envelope:hover path {
+    fill: #01813F;
+}
+.compass:hover path {
+    fill: #01813F;
+}
+.join {
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 18px 0 18px 0;
+}
+.join-text-active:hover {
+    color: #01813F;
+}
+.join:before {
+    content: "";
+    width: 1px;
+    height: 19px;
+    background: rgba(255, 255, 255, 0.9);
+    margin-right: 27px;
+    margin-left: 25px;
+}

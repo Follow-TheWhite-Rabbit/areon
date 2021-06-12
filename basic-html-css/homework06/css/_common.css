@@ -1,0 +1,19 @@
+* {
+    font-family: 'Ubuntu', sans-serif;
+}
+.conteiner {
+    width: 444px;
+    margin: 0 auto;
+    height: calc(100vh - 58px);
+
+}
+.conteiner-form {
+    width: 324px;
+    margin: 0 auto;
+}
+.Sing-up-form {
+    background-image: url("../img/hero-back.jpg");
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
