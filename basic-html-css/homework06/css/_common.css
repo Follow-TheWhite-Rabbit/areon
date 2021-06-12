@@ -7,10 +7,6 @@
     height: calc(100vh - 58px);
 
 }
-.conteiner-form {
-    width: 324px;
-    margin: 0 auto;
-}
 .Sing-up-form {
     background-image: url("../img/hero-back.jpg");
     background-size: cover;

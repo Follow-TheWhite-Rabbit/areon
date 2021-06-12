@@ -55,6 +55,12 @@
     line-height: 14px;
     padding: 18px 0 18px 0;
 }
+.join-text-active {
+    color: #fff;
+    font-size: 14px;
+    line-height: 14px;
+    text-decoration: none;
+}
 .join-text-active:hover {
     color: #01813F;
 }
