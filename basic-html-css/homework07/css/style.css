@@ -1,0 +1,48 @@
+.star-wars {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+}
+.conteiner {
+    perspective: 500px;
+    width: 1300px;
+    height: 60%;
+    margin: 0 auto;
+}
+.main {
+    margin: 50% 0 0 0;
+
+}
+.text {
+    text-align: justify;
+    padding: 50px;
+}
+.text-title {
+    text-align: center;
+    padding: 50px;
+}
+.title {
+    font-family: sans-serif;
+    color: #ffc909;
+    font-size: 350%;
+    line-height: 1.5em;
+    font-weight: bold;
+    position: relative;
+    animation: title 30s linear;
+    animation-iteration-count: infinite;
+    transform-style: preserve-3d;
+}
+
+@keyframes title {
+    from {
+        top: 0; transform: scale3d(1, 1, 5) translateZ(0) rotateX(10deg);
+    }
+    to {
+        top: -3000px; transform: scale3d(1, 1, 5) translateZ(-500px) rotateX(10deg);
+    }
+}
+
+
+
+
