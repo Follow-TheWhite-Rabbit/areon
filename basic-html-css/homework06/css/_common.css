@@ -5,6 +5,8 @@
     width: 444px;
     margin: 0 auto;
     height: calc(100vh - 58px);
+    display: flex;
+    align-items: center;
 
 }
 .Sing-up-form {
