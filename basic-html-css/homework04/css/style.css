@@ -1,6 +1,4 @@
 *{
-    margin: 0;
-    padding: 0;
     font-family: sans-serif;
 }
 .hero {
@@ -253,6 +251,15 @@
     margin-bottom: 15px;
 }
 .posts-card-title2 {
+    text-align: center;
+    color: #353A3D;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    margin-top: 14px;
+    margin-bottom: 15px;
+}
+.posts-card-title3 {
     text-align: right;
     color: #353A3D;
     font-weight: bold;
