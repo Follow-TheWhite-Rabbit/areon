@@ -1,4 +1,4 @@
-let number = +prompt("Введите число");
+let number = +prompt("Enter the number");
 
 for (let i = 0; i <= number; i = i + 5) {
     console.log(i);
