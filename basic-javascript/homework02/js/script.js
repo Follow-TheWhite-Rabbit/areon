@@ -1,7 +1,8 @@
 let number = +prompt("Enter the number");
-
-for (let i = 0; i <= number; i = i + 5) {
-    console.log(i);
-} if (number < 5) {
-    alert("Sorry, no numbers");
+    if (number < 5) {
+        console.log("Sorry, no numbers");
+} else for (let i = 0; i <= number; i++) {
+            if (i % 5 === 0 && i !== 0) {
+                console.log(i);
+    }
 }
