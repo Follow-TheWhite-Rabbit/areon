@@ -2,7 +2,7 @@ const firstNumber = +prompt("Enter the first number");
 const secondNumber = +prompt("Enter the second number");
 const mathOperation = prompt("Enter the math operation to be performed: +, -, *, /.");
 
-function calcNumber (firstNumber, secondNumber) {
+function calcNumber (firstNumber, secondNumber, mathOperation) {
 
     if (mathOperation === "+") {
         console.log(firstNumber + secondNumber);
@@ -20,7 +20,7 @@ function calcNumber (firstNumber, secondNumber) {
         alert("Incorrect data entered");
     }
 }
-calcNumber (firstNumber, secondNumber);
+calcNumber (firstNumber, secondNumber, mathOperation);
 
 
 
