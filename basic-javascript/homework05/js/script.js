@@ -42,7 +42,6 @@ function createNewUser() {
             const birthdayDate = this.birthday.split('.');
             const date = new Date(birthdayDate[2], birthdayDate[1] - 1, birthdayDate[0]);
             const time = now - date;
-            const dateTime = new Date(time);
             return new Date(Date.now() - date).getFullYear() - 1970;
         },
         getPassword: function () {
