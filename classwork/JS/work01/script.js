@@ -12,3 +12,5 @@ if (isNaN(age)) {
 } else if (age < 0) {
     console. error("Age less then zero")
 }
+
+
