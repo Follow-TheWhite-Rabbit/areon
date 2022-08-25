@@ -10,12 +10,16 @@ function createNewUser() {
         getLogin: function() {
             return (this.firstName[0] + this.lastName).toLowerCase()
         },
+        // getAge: function() {
+        //     const date = Date.now()
+        //     const birth = new Date(this.birthday.substr(3, 3) + this.birthday.substr(0, 3) + this.birthday.substr(-4, 4)).getTime()
+        //     const age = date - birth
+        //     return Math.floor(age / 1000 / 60 / 60 / 24 / 365)       /////// ИДЕЯ ЭТОГО СПОСОБА ЗАКЛЮЧАЕТСЯ В ТОМ, ЧТО МЫ ПЕРЕВОДИМ СЕГОДНЯШНЮЮ ДАТУ, И ДАТУ РОЖДЕНИЯ В МИЛЕСЕКУНДЫ, ВЫЧЕТАЕМ РАЗНИЦУ И ПЕРЕВОДИМ В ГОДА, ОКРУГЛЯЯ РЕЗУЛЬТАТ (НО ПРИ ЭТОМ НЕ УЧИТЫВАЮТСЯ ВИСОКОСНЫЕ ГОДА).
+        // },
         getAge: function() {
-            const date = Date.now()
-            const birth = new Date(this.birthday.substr(3, 3) + this.birthday.substr(0, 3) + this.birthday.substr(-4, 4)).getTime()
-            const age = date - birth
-            return Math.floor(age / 1000 / 60 / 60 / 24 / 365)  // ИДЕЯ ЭТОГО СПОСОБА ЗАКЛЮЧАЕТСЯ В ТОМ, ЧТО МЫ ПЕРЕВОДИМ СЕГОДНЯШНЮЮ ДАТУ, И ДАТУ РОЖДЕНИЯ В МИЛЕСЕКУНДЫ, ВЫЧЕТАЕМ РАЗНИЦУ И ПЕРЕВОДИМ В ГОДА, ОКРУГЛЯЯ РЕЗУЛЬТАТ.
-        },
+            const birth = new Date(this.birthday.substr(3, 3) + this.birthday.substr(0, 3) + this.birthday.substr(-4, 4))
+            return new Date(new Date() - birth).getFullYear() - 1970
+        },                                                                 ////////// ИДЕЯ ЭТОГО СПОСОБА ПРОЩЕ И НАДЁЖНЕЕ, ПО СУТИ МЫ ВЫЧИСЛЯЕМ ТЕ ЖЕ МИЛИСЕКУНДЫ, НО БОЛЕЕ КОРОТКИМ СПОСОБОМ, И ОТНИМАЕМ УЖЕ ПОЛНЫЕ ГОДА ОТ ТАЙМСТАМПА JS, ЭТОТ ВАРИАНТ УЧИТЫВАЕТ ВИСОКОСНЫЕ ГОДА, ТАК КАК ОБЪЕКТ new Date() ИХ УЧИТЫВАЕТ ПРИ ПРЕОБРАЗОВАНИИ МИЛИСЕКУНД В ДАТУ.
         getPassword: function() {
             return this.firstName[0].toUpperCase() + this.lastName.toLowerCase() + this.birthday.substr(-4, 4)
         },
