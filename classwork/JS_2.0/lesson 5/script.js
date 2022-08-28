@@ -241,30 +241,30 @@
 
 
 
-const arr = ["aa","aba", "aa", "ad", "vcd", "aba", "vcd", "aa", "ad", "aba", "vcd", "aba"]
-
-let res = []                                     // СОЗДАЛИ НОВЫЙ МАССИВ
-
-res = arr.map((value) => value.length)    // ПЕРЕЗАПИСАЛИ В НЕГО ДЛИННУ КАЖДОЙ СТРОКИ
-
-let result = []                                 // СОЗДАЛИ ЕЩЕ ОДИН ПУСТОЙ МАССИВ
-
-for (let i = 0; i < res.length; i++) {          // С ПОМОЩЬЮ ЦИКЛА, ПЕРЕБРАЛИ МАССИВ res, И ЗАПИСАЛИ В result ИНДЕКСЫ ВСЕХ МАКСИМАЛЬНЫХ ЧИСЕЛ (В КАЧЕСТВЕ ЗНАЧЕНИЙ)
-    if (res[i] === Math.max(...res)) {
-        result.push([i])
-    }
-}
-
-let newArr = []                // СОЗДАЛИ ЕЩЕ ОДИН ПУСТОЙ МАССИВ
-
-result.forEach((value) => {    // ПЕРЕБРАЛИ МАССИВ result С ПОМОЩЬЮ МЕТОДА forEach И ЗАПИСАЛИ В НОВЫЙ МАССИВ newArr ВСЕ ДЛИННЫЕ СЛОВА, ИСПОЛЬЗУЯ ИНДЕКСЫ МАКСИМАЛЬНЫХ ЧИСЕЛ
-    newArr.push(arr[value])
-})
-
-
-console.log(res)
-console.log(result)
-console.log(newArr)
+// const arr = ["aa","aba", "aa", "ad", "vcd", "aba", "vcd", "aa", "ad", "aba", "vcd", "aba"]
+//
+// let res = []                                     // СОЗДАЛИ НОВЫЙ МАССИВ
+//
+// res = arr.map((value) => value.length)    // ПЕРЕЗАПИСАЛИ В НЕГО ДЛИННУ КАЖДОЙ СТРОКИ
+//
+// let result = []                                 // СОЗДАЛИ ЕЩЕ ОДИН ПУСТОЙ МАССИВ
+//
+// for (let i = 0; i < res.length; i++) {          // С ПОМОЩЬЮ ЦИКЛА, ПЕРЕБРАЛИ МАССИВ res, И ЗАПИСАЛИ В result ИНДЕКСЫ ВСЕХ МАКСИМАЛЬНЫХ ЧИСЕЛ (В КАЧЕСТВЕ ЗНАЧЕНИЙ)
+//     if (res[i] === Math.max(...res)) {
+//         result.push([i])
+//     }
+// }
+//
+// let newArr = []                // СОЗДАЛИ ЕЩЕ ОДИН ПУСТОЙ МАССИВ
+//
+// result.forEach((value) => {    // ПЕРЕБРАЛИ МАССИВ result С ПОМОЩЬЮ МЕТОДА forEach И ЗАПИСАЛИ В НОВЫЙ МАССИВ newArr ВСЕ ДЛИННЫЕ СЛОВА, ИСПОЛЬЗУЯ ИНДЕКСЫ МАКСИМАЛЬНЫХ ЧИСЕЛ
+//     newArr.push(arr[value])
+// })
+//
+//
+// console.log(res)
+// console.log(result)
+// console.log(newArr)
 
 
 
@@ -284,6 +284,70 @@ console.log(newArr)
 //
 // console.log(res)
 // console.log(result)
+
+
+
+// Given an array of integers, find the pair of adjacent elements that has the largest product and return that product.
+
+// Example
+
+// For inputArray = [3, 6, -2, -5, 7, 3], the output should be
+// solution(inputArray) = 21.
+
+// 7 and 3 produce the largest product.
+
+// const arr  = [3, 6, -2, 5, 7, 3]
+// function arrElementProduct(inputArray) {
+//     return Math.max(...inputArray.slice(1).map((el,i )=> el * inputArray[i] ))
+//
+// }
+//
+// console.log(arrElementProduct(arr))
+
+
+
+
+
+// Написать функцию-помощник покупателя.
+//
+//     Функция не обладает параметрами и возвращает массив.
+//     Функция запрашивает у пользователя строку с товарами, которые он желает приобрести.
+//     Строка должна содержать все товары через запятую.
+//
+//     Программа повторно опрашивает пользователя если:
+//     - Введено менее чем один товар;
+// - Не введено товаров вообще.
+//
+//     После чего программа выводит в консоль введённые пользователем товары,
+//     при этом исключив из списка дубликаты.
+//
+//     Условия:
+// - Обязательно использовать структуру данных Set.
+//
+//
+//
+//     function helper(){
+//     let input = prompt('enter products!');
+//     while (input === null  !input.split(',')[0].length || !input.split(',')[1].length){
+//         // console.log(typeof input.split(',')[0])
+//         input = prompt('enter products!');
+//
+//     }
+//
+//     return new Set(input.split(','));
+//
+// }
+//
+// console.log(helper());
+
+
+
+
+
+
+
+
+
 
 
 
