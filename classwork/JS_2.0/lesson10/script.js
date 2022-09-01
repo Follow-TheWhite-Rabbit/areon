@@ -215,3 +215,69 @@
 
 
 
+/**
+ * Задание 1.
+ *
+ * Написать скрипт, который создаст квадрат произвольного размера.
+ *
+ * Размер квадрата в пикселях получить интерактивно посредством диалогового окна prompt.
+ *
+ * Если пользователь ввёл размер квадрата в некорректном формате —
+ * запрашивать данные повторно до тех пор, пока данные не будут введены корректно.
+ *
+ * Все стили для квадрата задать через JavaScript посредством одной строки кода.
+ *
+ * Тип элемента, описывающего квадрат — div.
+ * Задать ново-созданному элементу CSS-класс .square.
+ *
+ * Квадрат в виде стилизированного элемента div необходимо
+ * сделать первым и единственным потомком body документа.
+ */
+
+
+// let windowHeight = window.innerHeight
+// let windowWidth = window.innerWidth
+//
+// let numberBlocks = prompt("Enter number")
+//
+// const blocks = []
+//
+// while (isNaN(numberBlocks)) {
+//      numberBlocks = prompt("Enter number")
+// }
+//
+// function createBlock () {
+//     return {
+//         size: Math.floor(Math.random() * 100 + 100),
+//         color: '#' + Math.floor(Math.random()*16777215).toString(16),
+//     }
+// }
+//
+//
+// for (let i = 0; i < numberBlocks; i++) {
+//     blocks.push(createBlock())
+// }
+//
+//
+//
+// blocks.map(el => {
+//     el.positionLeft = Math.floor(Math.random() * (windowWidth - el.size))
+//     el.positionTop = Math.floor(Math.random() * (windowHeight - el.size))
+// })
+//
+// console.log(blocks);
+//
+// function createElement (el) {
+//     let block = document.createElement('div')
+//     block.style.cssText = `position: absolute; width: ${el.size}px; height: ${el.size}px; background-color: ${el.color}; top: ${el.positionTop}px; left: ${el.positionLeft}px`
+//     return block
+// }
+//
+// // blocks.forEach(el => document.body.append(createElement(el)))
+//
+//
+// blocks.forEach((el, i) => {
+//     setTimeout(() => {
+//         document.body.append(createElement(el))
+//     }, i * 1000);
+// });
