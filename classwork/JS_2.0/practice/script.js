@@ -19,14 +19,15 @@
 
 
 
-let arr = ["Kharkiv", "Kiev", ["Borispol", "Irpin"], "Odessa", "Lviv", "Dnieper", ["Borispol", "Irpin"]]
+let arr = ["Kharkiv", "Kiev", ["Borispol",["Borispol", "Irpin"], "Irpin"], "Odessa", "Lviv", "Dnieper", ["Borispol", "Irpin"]]
 
 let gogi = []
 
 function filter(el) {
     debugger
     if (Array.isArray(el)) {
-        el.map(filter)
+        for (let i = 0; i < el.length; i++)
+        filter(el[i])
     } else {
         return gogi.push(el)
     }
