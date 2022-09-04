@@ -145,21 +145,31 @@
 // <!--вивести списком масив-->
 
 
-//
+
 // const arr = ['apple', 'orange', 'banana', 'grape', 'mango', 'kivi']
 //
 //
-// let list = document.getElementById('wrapper');
-// let newList = document.createElement('ul');
-// list.append(newList);
+// let list = document.getElementById('wrapper')
+// let newList = document.createElement('ul')
+// list.append(newList)
 //
-// newList.innerHTML = arr.map(element => <li>${element}</li>).join(' ');
+// newList.innerHTML = arr.map(element => `<li>${element}</li>`).join(' ')
 //
-// newList.addEventListener(click, function(event){
-//     newList.append(event.target);
-//     console.log(event);
+//    // arr.forEach(el => newList.innerHTML += `<li>${el}</li>`)  // способ через форич
+//
+//   // arr.forEach(el => {
+//   //     const item = document.createElement('li');              // способ через форичь решить полностью
+//   //     item.textContent = el;
+//   //     list.append(item);
+//   //     item.addEventListener('click', filter)
+//   // })
+//
+//
+// newList.addEventListener('click', function(event){
+//     newList.append(event.target)
+//     console.log(event)
 // })
-
+//
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
