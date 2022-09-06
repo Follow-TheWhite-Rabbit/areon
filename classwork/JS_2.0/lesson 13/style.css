@@ -1,0 +1,36 @@
+.wrapper {
+    position: relative;
+
+    width: 50vw;
+    margin: 0 auto;
+}
+.images {
+    overflow: hidden;
+}
+.slider {
+    display: flex;
+    transition: transform 1000ms linear;
+}
+.wrapper img {
+    min-width: 100%;
+}
+.arrowLeft {
+    left: -60px;
+    top: calc(50% - 50px);
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 50px 50px 0;
+    border-color: transparent #000000 transparent transparent;
+}
+.arrowRight {
+    top: calc(50% - 50px);
+    right: -60px;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 0 50px 50px;
+    border-color: transparent transparent transparent #000000;
+}
