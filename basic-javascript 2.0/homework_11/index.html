@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+            crossorigin="anonymous"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Homework-buttons</title>
+    <style>
+        .password-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .input-wrapper {
+            position: relative;
+            width: 200px;
+
+        }
+
+        .input-wrapper input {
+            min-width: 120px;
+            padding: 10px;
+            margin-bottom: 24px;
+        }
+
+        .input-wrapper i {
+            position: absolute;
+            right: 25px;
+            top: 30px;
+            color: grey;
+        }
+
+        .btn{
+            width: 150px;
+        }
+
+        .not-active {
+            display: none;
+        }
+
+        #wrong {
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+<form class="password-form" action="#" type="POST">
+    <label class="input-wrapper first">
+        Ввести пароль
+        <input type="password" name="pass-1"/>
+        <i class="fas fa-eye icon-password"></i>
+         <i class="fas fa-eye-slash icon-password not-active"></i>
+    </label>
+    <label class="input-wrapper second">
+        Подтвердить пароль
+        <input type="password" name="pass-2"/>
+        <i class="fas fa-eye icon-password"></i>
+         <i class="fas fa-eye-slash icon-password not-active"></i>
+    </label>
+    <button type="submit" class="btn">Подтвердить</button>
+</form>
+
+
+<script src="script.js"></script>
+</body>
+</html>

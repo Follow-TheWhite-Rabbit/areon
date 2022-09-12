@@ -117,7 +117,24 @@
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+///////////////////////////////////// рпавильное решение дз ///////////////////////////////////////
 
+// let ul = document.querySelector('.tabs')
+//
+// ul.addEventListener('click', function (ev) {
+//
+//     document.querySelector('.active-p').classList.remove('active-p')
+//
+//     document.querySelector('.active-tab').classList.remove('active-tab')
+//
+//     document.querySelector(`[data-li = ${data}]`).classList.add('active-p')
+//
+//     ev.target.classList.add('active-tab')
+//
+// })
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 // const tabList = document.querySelector('.tabs')
 // tabList.addEventListener("click", (event) => {
@@ -133,25 +150,53 @@
 //
 //
 // console.log(tabList)
+//
+//
+//
+//
+//
+// const tabList = document.querySelectorAll('.tabs-title')
+//
+// tabList.forEach(el => {
+//     el.addEventListener("click", function() {
+//         if (document.querySelector(".active")) {
+//             document.querySelector(".active").classList.remove('active')
+//         }
+//         el.classList.add("active")
+//     })
+// })
+//
+//
+// const tabArr = Array.from(document.querySelector('.tabs').children)
+// console.log(tabArr)
 
-const tabList = document.querySelectorAll('.tabs-title')
-
-tabList.forEach(el => {
-    el.addEventListener("click", function() {
-        if (document.querySelector(".active")) {
-            document.querySelector(".active").classList.remove('active')
-        }
-        el.classList.add("active")
-    })
-})
-
-
-const tabArr = Array.from(document.querySelector('.tabs').children)
-console.log(tabArr)
+//
+//
+// const contentArr = Array.from(document.querySelector('.tabs-content').children)
+// console.log(contentArr)
 
 
 
-const contentArr = Array.from(document.querySelector('.tabs-content').children)
-console.log(contentArr)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
