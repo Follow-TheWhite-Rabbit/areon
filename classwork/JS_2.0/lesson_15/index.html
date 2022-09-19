@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<script>
+    let div = document.createElement('div')
+    div.classList.add('loader')
+    document.body.append(div)
+    console.log(document.readyState)
+    document.addEventListener('readystatechange', function () {
+        console.log(document.readyState)
+        // if (document.readyState == 'complete') {
+        //     div.hidden = true
+        // }
+    })
+    window.addEventListener('load', function () {
+        div.hidden = true
+    })
+
+
+</script>
+
+<Style>
+    .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 99;
+        background: rgba(0, 0, 0, 0.3);
+    }
+    .loader::before {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 10px solid greenyellow;
+        /*border-left: none;*/
+        border-left-color: transparent;
+        position: absolute;
+        top: calc(50% - 30px);
+        left: calc(50% - 30px);
+        transform: rotate(0deg);
+        animation: 1s linear infinite spinner;
+    }
+    @keyframes spinner {
+        from {transform: rotate(0deg)}
+        to {transform: rotate(360deg)}
+    }
+
+
+</Style>
+
+
+
+<ul class="tree" id="tree">
+    <li>Животные
+        <ul>
+            <li>Млекопитающие
+                <ul>
+                    <li>Коровы</li>
+                    <li>Ослы</li>
+                    <li>Собаки</li>
+                    <li>Тигры</li>
+                </ul>
+            </li>
+            <li>Другие
+                <ul>
+                    <li>Змеи</li>
+                    <li>Птицы</li>
+                    <li>Ящерицы</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>Рыбы
+        <ul>
+            <li>Аквариумные
+                <ul>
+                    <li>Гуппи</li>
+                    <li>Скалярии</li>
+                </ul>
+            </li>
+            <li>Морские
+                <ul>
+                    <li>Морская форель</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<img id="img" src="https://en.js.cx/clipart/train.gif?speed=1&cache=0">
+
+<script src="script.js"></script>
+</body>
+</html>
