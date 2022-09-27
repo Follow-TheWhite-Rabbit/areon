@@ -1,6 +1,5 @@
 .option {
     display: grid;
-    /*grid-auto-flow: column;*/
     grid-template-columns: repeat(4, 1fr);
     border-top: 8px solid #ffffff;
 
