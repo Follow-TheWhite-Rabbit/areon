@@ -83,12 +83,10 @@ let currentIndex = 0
 let leftArrow = document.querySelector(".button_left")
 leftArrow.addEventListener("click", function () {
     slide("left")
-    console.log(currentIndex)
 })
 let rightArrow = document.querySelector(".button_right")
 rightArrow.addEventListener("click", function () {
     slide("right")
-    console.log(currentIndex)
 })
 
 let width = document.querySelector(".client_feedback_gallery").offsetWidth
