@@ -20,6 +20,12 @@
 // })
 
 
+///////////////////////////     Сервис     /////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
 document.querySelectorAll('.service_menu_items').forEach(el => {
     el.addEventListener('click', () => {
         document.querySelectorAll('.service_menu_items').forEach(el => el.classList.remove('active'));
@@ -31,7 +37,7 @@ document.querySelectorAll('.service_menu_items').forEach(el => {
 
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////      Галерея     //////////////////////////////////////////////////////////////////////
 
 document.querySelectorAll('.work_menu_items').forEach(el => {
     el.addEventListener('click', () => {
@@ -66,7 +72,7 @@ document.querySelector('.work_button').addEventListener('click', (event) => {
 
 
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////   Карусель    /////////////////////////////////////////////////////////////////////
 
 
 
@@ -87,19 +93,37 @@ let width = document.querySelector(".client_feedback_gallery").offsetWidth
 
 const slider = document.querySelector(".slider")
 
+//////////////////// доработка /////////////////////////
+
+let thumbWidth = "97"
+let visibleThumbs = (document.querySelectorAll(".client_carousel_img img").length) - 4
+
+
+function update () {
+    if (currentIndex === 0 || currentIndex < 3) {
+        document.querySelector(".client_carousel_img").style.cssText = `transform: translateX(0px)`
+    } else if (currentIndex === visibleThumbs || currentIndex > visibleThumbs) {
+        document.querySelector(".client_carousel_img").style.cssText = `transform: translateX(${visibleThumbs * -thumbWidth}px)`
+    } else {
+        document.querySelector(".client_carousel_img").style.cssText = `transform: translateX(${(currentIndex * -thumbWidth) + 97}px)`
+
+    }
+}
+
+//////////////////// доработка ///////////////////////
 
 function slide(direction) {
     switch (direction) {
         case "left":
             if (currentIndex > 0) {
                 currentIndex--
-                slider.style.cssText = `transform: translateX( ${currentIndex * width * -1}px)`
-                document.querySelectorAll(".client_feedback_carousel_img").forEach((el, index) => {
+                slider.style.cssText = `transform: translateX( ${currentIndex * -width}px)`
+                document.querySelectorAll(".client_carousel_img img").forEach((el, index) => {
                     if (index === currentIndex) {
                         el.style.marginBottom = "30px"
                     }
                 })
-                document.querySelectorAll(".client_feedback_carousel_img").forEach((el, index) => {
+                document.querySelectorAll(".client_carousel_img img").forEach((el, index) => {
                     if (index === currentIndex + 1) {
                         el.style.marginBottom = "0"
                     }
@@ -109,13 +133,13 @@ function slide(direction) {
         case "right":
             currentIndex++
             if (currentIndex < feedbackLength) {
-                slider.style.cssText = `transform: translateX( ${currentIndex * width * -1}px)`
-                document.querySelectorAll(".client_feedback_carousel_img").forEach((el, index) => {
+                slider.style.cssText = `transform: translateX( ${currentIndex * -width}px)`
+                document.querySelectorAll(".client_carousel_img img").forEach((el, index) => {
                     if (index === currentIndex) {
                         el.style.marginBottom = "30px"
                     }
                 })
-                document.querySelectorAll(".client_feedback_carousel_img").forEach((el, index) => {
+                document.querySelectorAll(".client_carousel_img img").forEach((el, index) => {
                     if (index === currentIndex - 1) {
                         el.style.marginBottom = "0"
                     }
@@ -125,17 +149,20 @@ function slide(direction) {
         default:
             false;
     }
+    update ()
 }
 
-document.querySelectorAll(".client_feedback_carousel_img").forEach((el, index) => {
-        el.addEventListener('click', () => {
-            currentIndex = index
-            slider.style.cssText = `transform: translateX( ${currentIndex * width * -1}px)`
-            document.querySelectorAll(".client_feedback_carousel_img").forEach((el, index) => {
-                    el.style.marginBottom = "0"
-            })
-            el.style.marginBottom = "30px"
+
+document.querySelectorAll(".client_carousel_img img").forEach((el, index) => {
+    el.addEventListener('click', () => {
+        currentIndex = index
+        slider.style.cssText = `transform: translateX( ${currentIndex * -width}px)`
+        document.querySelector(".client_carousel_img").style.cssText = `transform: translateX(${(currentIndex * -thumbWidth) + 97}px)`  ///////////// доработка ////////////////
+        document.querySelectorAll(".client_carousel_img img").forEach((el, index) => {
+            el.style.marginBottom = "0"
         })
+        el.style.marginBottom = "30px"
+    })
 })
 
 
