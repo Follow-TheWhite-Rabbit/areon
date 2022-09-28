@@ -83,10 +83,12 @@ let currentIndex = 0
 let leftArrow = document.querySelector(".button_left")
 leftArrow.addEventListener("click", function () {
     slide("left")
+    console.log(currentIndex)
 })
 let rightArrow = document.querySelector(".button_right")
 rightArrow.addEventListener("click", function () {
     slide("right")
+    console.log(currentIndex)
 })
 
 let width = document.querySelector(".client_feedback_gallery").offsetWidth
@@ -100,7 +102,7 @@ let visibleThumbs = (document.querySelectorAll(".client_carousel_img img").lengt
 
 
 function update () {
-    if (currentIndex === 0 || currentIndex < 3) {
+    if (currentIndex === 0 || currentIndex < 2) {
         document.querySelector(".client_carousel_img").style.cssText = `transform: translateX(0px)`
     } else if (currentIndex > visibleThumbs) {
         document.querySelector(".client_carousel_img").style.cssText = `transform: translateX(${visibleThumbs * -thumbWidth}px)`
@@ -159,7 +161,7 @@ document.querySelectorAll(".client_carousel_img img").forEach((el, index) => {
         slider.style.cssText = `transform: translateX( ${currentIndex * -width}px)`
 
 
-        if (currentIndex === 0 || currentIndex < 3) {                                                               /////////////////  доработка (162-170)    //////////////////////////
+        if (currentIndex === 0 || currentIndex < 2) {                                                               /////////////////  доработка (162-170)    //////////////////////////
             document.querySelector(".client_carousel_img").style.cssText = `transform: translateX(0px)`
         } else if (currentIndex > visibleThumbs) {
             document.querySelector(".client_carousel_img").style.cssText = `transform: translateX(${visibleThumbs * -thumbWidth}px)`
