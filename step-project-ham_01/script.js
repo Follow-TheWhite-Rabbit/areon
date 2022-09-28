@@ -102,7 +102,7 @@ let visibleThumbs = (document.querySelectorAll(".client_carousel_img img").lengt
 function update () {
     if (currentIndex === 0 || currentIndex < 3) {
         document.querySelector(".client_carousel_img").style.cssText = `transform: translateX(0px)`
-    } else if (currentIndex === visibleThumbs || currentIndex > visibleThumbs) {
+    } else if (currentIndex > visibleThumbs) {
         document.querySelector(".client_carousel_img").style.cssText = `transform: translateX(${visibleThumbs * -thumbWidth}px)`
     } else {
         document.querySelector(".client_carousel_img").style.cssText = `transform: translateX(${(currentIndex * -thumbWidth) + 97}px)`
@@ -157,7 +157,19 @@ document.querySelectorAll(".client_carousel_img img").forEach((el, index) => {
     el.addEventListener('click', () => {
         currentIndex = index
         slider.style.cssText = `transform: translateX( ${currentIndex * -width}px)`
-        document.querySelector(".client_carousel_img").style.cssText = `transform: translateX(${(currentIndex * -thumbWidth) + 97}px)`  ///////////// доработка ////////////////
+
+
+        if (currentIndex === 0 || currentIndex < 3) {                                                               /////////////////  доработка (162-170)    //////////////////////////
+            document.querySelector(".client_carousel_img").style.cssText = `transform: translateX(0px)`
+        } else if (currentIndex > visibleThumbs) {
+            document.querySelector(".client_carousel_img").style.cssText = `transform: translateX(${visibleThumbs * -thumbWidth}px)`
+        } else if (currentIndex === visibleThumbs) {
+            document.querySelector(".client_carousel_img").style.cssText = `transform: translateX(${(currentIndex * -thumbWidth) + 194}px)`
+        } else {
+            document.querySelector(".client_carousel_img").style.cssText = `transform: translateX(${(currentIndex * -thumbWidth) + 97}px)`
+        }
+
+
         document.querySelectorAll(".client_carousel_img img").forEach((el, index) => {
             el.style.marginBottom = "0"
         })
