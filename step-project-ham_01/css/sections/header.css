@@ -101,6 +101,7 @@
     margin-top: 134px;
 }
 .left_button {
+    margin-right: 13px;
     padding: 16px 26px;
     font-weight: 700;
     font-size: 15px;
@@ -114,6 +115,7 @@
     cursor: pointer;
 }
 .right_button {
+    margin-left: 13px;
     padding: 16px 18px;
     font-weight: 700;
     font-size: 15px;
