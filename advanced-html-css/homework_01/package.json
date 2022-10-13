@@ -2,10 +2,10 @@
   "name": "project-x",
   "version": "1.0.0",
   "description": "Novoselov Oleksandr FE_6",
-  "main": "homework_01/app.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node homework_01/app.js",
-    "test": "node homework_01/app.js"
+    "start": "node app.js",
+    "test": "node app.js"
   },
   "repository": {
     "type": "git",
