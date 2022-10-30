@@ -1,0 +1,9 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+@mixin text-link {
+  text-decoration: none;
+  cursor: pointer;
+}

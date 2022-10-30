@@ -1,0 +1,22 @@
+{
+  "name": "lesson_01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server dist -c-1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "http-server": "^14.1.1",
+    "sass": "^1.55.0"
+  },
+  "dependencies": {
+    "concurrently": "^7.4.0"
+  }
+}
