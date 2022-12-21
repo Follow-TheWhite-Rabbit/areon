@@ -2,10 +2,10 @@
 
 class Employee {
 
-    constructor(options) {
-        this.name = options.name
-        this.age = options.age
-        this.salary = options.salary
+    constructor(name, age, salary) {
+        this.name = name
+        this.age = age
+        this.salary = salary
     }
 
     get nameInfo () {return this.name}
@@ -19,9 +19,9 @@ class Employee {
 
 class Programmer extends Employee {
 
-    constructor(options) {
-        super(options)
-        this.lang = options.lang
+    constructor(name, age, salary, lang) {
+        super(name, age, salary)
+        this.lang = lang
     }
 
      get salInfo () {
@@ -29,23 +29,8 @@ class Programmer extends Employee {
     }
 }
 
-const alex = new Programmer ({
-    name: "Alex",
-    age: 25,
-    salary: 30000,
-    lang: "eng"
-})
-const nic = new Programmer({
-    name: "Nic",
-    age: 23,
-    salary: 25000,
-    lang: "ua"
-})
-const lera = new Programmer({
-    name: "Lera",
-    age: 24,
-    salary: 23000,
-    lang: "ua"
-})
+const alex = new Programmer ("Alex", 25, 30000, "eng")
+const nic = new Programmer("Nic", 23, 25000, "ua")
+const lera = new Programmer("Lera", 24, 23000, "ua")
 
 console.log(alex, nic, lera)
