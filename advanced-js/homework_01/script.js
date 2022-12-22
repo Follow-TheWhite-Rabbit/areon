@@ -27,6 +27,8 @@ class Programmer extends Employee {
      get salInfo () {
         return this.salary * 3
     }
+    get langInfo () {return this.lang}
+    set langInfo (newLang) {this.lang = newLang}
 }
 
 const alex = new Programmer ("Alex", 25, 30000, "eng")
