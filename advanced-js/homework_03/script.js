@@ -150,7 +150,9 @@ const array = ['value', () => 'showValue'];
 
 // Допишіть код тут
 
-const [value = 'value', showValue = () => 'showValue'] = array;
+// const [value = 'value', showValue = () => 'showValue'] = array;
+
+const [value, showValue] = array
 
 alert(value); // має бути виведено 'value'
 alert(showValue());  // має бути виведено 'showValue'
