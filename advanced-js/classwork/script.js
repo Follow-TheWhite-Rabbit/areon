@@ -100,3 +100,76 @@
 // army[5]();
 
 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+function getPokemon (url) {
+    fetch (url)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+             renderPokemon(data);
+        });
+
+}
+
+function renderPokemon (pokemon) {
+    let div = document.createElement('div');
+    let name = document.createElement('div');
+    let id = document.createElement('div');
+    let height = document.createElement('div');
+    let weight = document.createElement('div');
+    name.innerText = pokemon.name
+    id.innerText = pokemon.id
+    height.innerText = pokemon.height
+    weight.innerText = pokemon.weight
+    div.append(name, id, height, weight)
+    document.body.appendChild(div)
+}
+
+function renderPokemons(pokemons) {
+    let ul = document.createElement('ul');
+    pokemons.forEach(({name, url}) => {
+        let li = document.createElement('li');
+        ul.appendChild(li);
+        let a = document.createElement("a")
+        a.setAttribute("href", "#")
+        a.innerText = name;
+        li.appendChild(a);
+        li.addEventListener("click", () => getPokemon(url))
+    });
+    document.body.appendChild(ul);
+}
+fetch ('https://pokeapi.co/api/v2/pokemon')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        renderPokemons(data.results);
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
