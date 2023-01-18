@@ -100,59 +100,261 @@
 // army[5]();
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////  2   //////////////
 
-function getPokemon (url) {
-    fetch (url)
-        .then(response => response.json())
-        .then(data => {
+// function getPokemon (url) {
+//     fetch (url)
+//         .then(response => response.json())
+//         .then(data => {
+//             console.log(data);
+//              renderPokemon(data);
+//         });
+//
+// }
+//
+// function renderPokemon (pokemon) {
+//     let div = document.createElement('div');
+//     let name = document.createElement('div');
+//     let id = document.createElement('div');
+//     let height = document.createElement('div');
+//     let weight = document.createElement('div');
+//     name.innerText = pokemon.name
+//     id.innerText = pokemon.id
+//     height.innerText = pokemon.height
+//     weight.innerText = pokemon.weight
+//     div.append(name, id, height, weight)
+//     document.body.appendChild(div)
+// }
+//
+// function renderPokemons(pokemons) {
+//     let ul = document.createElement('ul');
+//     pokemons.forEach(({name, url}) => {
+//         let li = document.createElement('li');
+//         ul.appendChild(li);
+//         let a = document.createElement("a")
+//         a.setAttribute("href", "#")
+//         a.innerText = name;
+//         li.appendChild(a);
+//         li.addEventListener("click", () => getPokemon(url))
+//     });
+//     document.body.appendChild(ul);
+// }
+// fetch ('https://pokeapi.co/api/v2/pokemon')
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log(data);
+//         renderPokemons(data.results);
+//     });
+
+
+
+////////////////////////////////////////////////////////////////////////
+
+
+
+// const prevButton = document.createElement('button');
+// const nextButton = document.createElement('button');
+// prevButton.innerText = 'prev pokemons';
+// nextButton.innerText = 'next pokemons';
+// prevButton.disabled = true;
+// document.body.append(prevButton);
+// document.body.append(nextButton);
+// let nextLink;
+// let prevLink;
+// prevButton.addEventListener('click', () => {
+//     const prevPockemon = document.querySelector('.pokemon');
+//     if (prevPockemon) {
+//         prevPockemon.remove();
+//     }
+//     getPokemons(prevLink);
+// });
+// nextButton.addEventListener('click', () => {
+//     const prevPockemon = document.querySelector('.pokemon');
+//     if (prevPockemon) {
+//         prevPockemon.remove();
+//     }
+//     getPokemons(nextLink);
+// });
+// function getPokemons(url) {
+//     fetch(url)
+//         .then(response => response.json())
+//         .then(data => {
+//             console.log(data);
+//             nextLink = data.next;
+//             prevLink = data.previous;
+//             nextButton.disabled = !data.next;
+//             prevButton.disabled = !data.previous;
+//             renderPokemons(data.results);
+//         });
+// }
+// function getPokemon(url) {
+//     fetch(url)
+//         .then(response => response.json())
+//         .then(data => {
+//             // console.log(data);
+//             renderPokemon(data);
+//         });
+// }
+// function renderPokemon(pokemon) {
+//     const prevPockemon = document.querySelector('.pokemon');
+//     if (prevPockemon) {
+//         prevPockemon.remove();
+//     }
+//     let div = document.createElement('div');
+//     let name = document.createElement('div');
+//     let id = document.createElement('div');
+//     let height = document.createElement('div');
+//     let weight = document.createElement('div');
+//     const img = document.createElement('img');
+//     div.classList.add('pokemon');
+//     img.src = pokemon.sprites.front_default;
+//     name.innerText = pokemon.name;
+//     id.innerText = pokemon.id;
+//     height.innerText = pokemon.height;
+//     weight.innerText = pokemon.weight;
+//     div.append(name, id, height, weight, img);
+//     document.body.appendChild(div);
+// }
+// function renderPokemons(pokemons) {
+//     const prevPockemons = document.querySelector('.pokemons');
+//     if (prevPockemons) {
+//         prevPockemons.remove();
+//     }
+//     let ul = document.createElement('ul');
+//     pokemons.forEach(({ name, url }) => {
+//         let li = document.createElement('li');
+//         ul.appendChild(li);
+//         let a = document.createElement("a")
+//         a.setAttribute("href", "#")
+//         a.innerText = name;
+//         li.appendChild(a);
+//         li.addEventListener("click", () => getPokemon(url))
+//     });
+//     ul.classList.add('pokemons');
+//     document.body.appendChild(ul);
+// }
+//
+//
+// getPokemons('https://pokeapi.co/api/v2/pokemon');
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////  3   //////////////
+
+
+// https://pokeapi.co/docs/v2#resource-listspagination-section  -  Ссылка на базу
+
+
+const prevButton = document.createElement('button');
+const nextButton = document.createElement('button');
+const limitElement = document.querySelector('.limit');
+const sendBtn = document.querySelector('.send_btn');
+const page = document.querySelector('.page');
+let limit = limitElement.value;
+let offset = 0;
+let count = 0;
+sendBtn.addEventListener('click', () => {
+    limit = limitElement.value;
+    getPokemons(
+        `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
+    );
+});
+prevButton.innerText = 'prev pokemons';
+nextButton.innerText = 'next pokemons';
+prevButton.disabled = true;
+document.body.append(prevButton);
+document.body.append(nextButton);
+prevButton.addEventListener('click', () => {
+    if (offset < 0) return;
+    offset -= Number(limit);
+    page.innerText = `${offset + Number(limit)} of ${count}`;
+    const prevPockemon = document.querySelector('.pokemon');
+    if (prevPockemon) {
+        prevPockemon.remove();
+    }
+    getPokemons(
+        `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
+    );
+});
+nextButton.addEventListener('click', () => {
+    if (offset > count) return;
+    offset += Number(limit);
+    page.innerText = `${offset + Number(limit)} of ${count}`;
+    const prevPockemon = document.querySelector('.pokemon');
+    if (prevPockemon) {
+        prevPockemon.remove();
+    }
+    // console.log(offset);
+    // console.log(limit);
+    getPokemons(
+        `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
+    );
+});
+function getPokemons(url) {
+    fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
             console.log(data);
-             renderPokemon(data);
+            count = data.count;
+            nextLink = data.next;
+            prevLink = data.previous;
+            nextButton.disabled = !data.next;
+            prevButton.disabled = !data.previous;
+            renderPokemons(data.results);
+            page.innerText = `${offset + Number(limit)} of ${count}`;
         });
-
 }
-
-function renderPokemon (pokemon) {
+function getPokemon(url) {
+    fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+            // console.log(data);
+            renderPokemon(data);
+        });
+}
+function renderPokemon(pokemon) {
+    const prevPockemon = document.querySelector('.pokemon');
+    if (prevPockemon) {
+        prevPockemon.remove();
+    }
     let div = document.createElement('div');
     let name = document.createElement('div');
     let id = document.createElement('div');
     let height = document.createElement('div');
     let weight = document.createElement('div');
-    name.innerText = pokemon.name
-    id.innerText = pokemon.id
-    height.innerText = pokemon.height
-    weight.innerText = pokemon.weight
-    div.append(name, id, height, weight)
-    document.body.appendChild(div)
+    const img = document.createElement('img');
+    div.classList.add('pokemon');
+    img.src = pokemon.sprites.front_default;
+    name.innerText = pokemon.name;
+    id.innerText = pokemon.id;
+    height.innerText = pokemon.height;
+    weight.innerText = pokemon.weight;
+    div.append(name, id, height, weight, img);
+    document.body.appendChild(div);
 }
-
 function renderPokemons(pokemons) {
+    const prevPockemons = document.querySelector('.pokemons');
+    if (prevPockemons) {
+        prevPockemons.remove();
+    }
     let ul = document.createElement('ul');
-    pokemons.forEach(({name, url}) => {
+    pokemons.forEach(({ name, url }) => {
         let li = document.createElement('li');
         ul.appendChild(li);
-        let a = document.createElement("a")
-        a.setAttribute("href", "#")
+        let a = document.createElement('a');
+        a.setAttribute('href', '#');
         a.innerText = name;
         li.appendChild(a);
-        li.addEventListener("click", () => getPokemon(url))
+        li.addEventListener('click', () => getPokemon(url));
     });
+    ul.classList.add('pokemons');
     document.body.appendChild(ul);
 }
-fetch ('https://pokeapi.co/api/v2/pokemon')
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        renderPokemons(data.results);
-    });
-
-
-
-
-
-
-
-
+getPokemons(
+    `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
+);
+// getPokemons('https://pokeapi.co/api/v2/pokemon?limit=5');
 
 
 
